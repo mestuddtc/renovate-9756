@@ -17,7 +17,7 @@
     },
     {
       "description": "Silent updates on mainline",
-      "matchBaseBranches": ["master"],,
+      "matchBaseBranches": ["master"],
       "matchPackagePatterns": ["^rx"],
       "matchUpdateTypes": [ "minor", "patch" ],
       "automerge": true,
