@@ -1,0 +1,39 @@
+{
+  "baseBranches": ["master", "release-12"],
+  "branchPrefix": "renovate/",
+  "separateMinorPatch": true,
+  "packageRules": [
+    {
+      "description": "Disable all updates for main development (to be removed?)",
+      "matchBaseBranches": ["master"],
+      "matchPackagePatterns": ["*"],
+      "enabled": false
+    },
+    {
+      "description": "Disable all updates on active branches",
+      "matchBaseBranches": ["release-12"],
+      "matchPackagePatterns": ["*"],
+      "enabled": false
+    },
+    {
+      "description": "Silent updates on mainline",
+      "matchBaseBranches": ["master"],,
+      "matchPackagePatterns": ["^rx"],
+      "matchUpdateTypes": [ "minor", "patch" ],
+      "automerge": true,
+      "automergeType": "branch",
+      "requiredStatusChecks": null,
+      "enabled": true
+    },
+    {
+      "description": "Silent patch on branch",
+      "matchBaseBranches": ["release-12"],
+      "matchPackageNames": ["rxjs"],
+      "matchUpdateTypes": [ "patch" ],
+      "automerge": true,
+      "automergeType": "branch",
+      "requiredStatusChecks": null,
+      "enabled": true
+    }
+  ]
+}
